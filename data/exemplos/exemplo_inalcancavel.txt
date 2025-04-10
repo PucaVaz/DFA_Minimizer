@@ -1,0 +1,19 @@
+# Exemplo 2: DFA com estado inalcançável (q3)
+# Aceita strings com número par de 'a's
+alfabeto:a,b
+estados:q0,q1,q2,q3 # q3 é inalcançável
+inicial:q0
+finais:q0
+transicoes
+# Parte alcançável (par/ímpar 'a's)
+q0,q1,a
+q0,q0,b
+q1,q0,a
+q1,q1,b
+# Estado q2 (final, alcançável, equivalente a q0?) - Opcional para mais teste
+# q0,q2,b # Se descomentado, q2 é alcançável e final
+# q2,q1,a
+# q2,q2,b
+# Estado inalcançável
+q3,q3,a
+q3,q0,b # Mesmo com transição para fora, q3 nunca é entrado

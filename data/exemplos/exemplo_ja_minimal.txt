@@ -1,0 +1,15 @@
+# Exemplo 1: DFA já mínimo (aceita strings terminando em "10")
+alfabeto:0,1
+estados:q0,q1,q2
+inicial:q0
+finais:q2
+transicoes
+# Estado inicial
+q0,q0,0
+q0,q1,1
+# Viu um '1'
+q1,q2,0
+q1,q1,1
+# Viu "10" (final)
+q2,q0,0
+q2,q1,1

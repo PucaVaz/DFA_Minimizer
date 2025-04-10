@@ -1,0 +1,11 @@
+# Exemplo 8: Inválido - Alfabeto inconsistente
+# Símbolo 'c' usado na transição não foi declarado
+alfabeto:a,b # Falta 'c'
+estados:q0,q1
+inicial:q0
+finais:q1
+transicoes
+q0,q1,a
+q0,q0,b
+q1,q1,c # Símbolo 'c' inválido!
+q1,q0,a

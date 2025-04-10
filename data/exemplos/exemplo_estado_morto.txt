@@ -1,0 +1,19 @@
+# Exemplo 4: DFA com estado morto/erro (q_erro)
+# Aceita apenas a string "a"
+alfabeto:a,b
+estados:q0,q1,q2,q_erro
+inicial:q0
+finais:q1
+transicoes
+# Estado inicial q0
+q0,q1,a
+q0,q_erro,b # Qualquer coisa que não seja 'a' inicial vai para erro
+# Estado final q1 (aceita 'a')
+q1,q2,a     # Após 'a', vai para q2
+q1,q2,b     # Após 'a', vai para q2
+# Estado q2 (não final, vai para erro)
+q2,q_erro,a
+q2,q_erro,b
+# Estado de Erro (não final, loop)
+q_erro,q_erro,a
+q_erro,q_erro,b

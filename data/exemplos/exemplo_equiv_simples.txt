@@ -1,0 +1,18 @@
+# Exemplo 3: DFA com equivalência simples (q1 e q3)
+# Aceita strings que terminam em 'a'
+alfabeto:a,b
+estados:q0,q1,q2,q3
+inicial:q0
+finais:q1,q3 # q1 e q3 são finais e devem ser equivalentes
+transicoes
+q0,q1,a
+q0,q2,b
+# Estado final q1
+q1,q1,a
+q1,q2,b
+# Estado não-final q2
+q2,q1,a
+q2,q2,b
+# Estado final q3 (comportamento idêntico a q1)
+q3,q1,a # Vai para q1 em 'a' (poderia ser q3 também)
+q3,q2,b # Vai para q2 em 'b'

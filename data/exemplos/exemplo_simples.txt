@@ -1,0 +1,15 @@
+# Exemplo 1: DFA Simples que aceita strings binárias terminadas em 01
+alfabeto:0,1
+estados:q0,q1,q2
+inicial:q0
+finais:q2
+transicoes
+# Transicoes a partir de q0
+q0,q1,0
+q0,q0,1
+# Transicoes a partir de q1
+q1,q1,0
+q1,q2,1
+# Transicoes a partir de q2
+q2,q1,0
+q2,q0,1

@@ -1,0 +1,24 @@
+# Exemplo 2: DFA com estados equivalentes para teste de minimização
+alfabeto:a,b
+estados:A,B,C,D,E,F
+inicial:A
+finais:C,D
+transicoes
+# Bloco A
+A,B,a
+A,F,b
+# Bloco B
+B,E,a
+B,C,b
+# Bloco C (Final)
+C,E,a
+C,C,b
+# Bloco D (Final - Equivalente a C)
+D,E,a
+D,D,b
+# Bloco E (Equivalente a F)
+E,E,a
+E,F,b
+# Bloco F (Não-final / "Morto" para 'a')
+F,F,a
+F,F,b

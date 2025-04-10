@@ -1,0 +1,26 @@
+# Exemplo 5: DFA com estados equivalentes múltiplos (Fornecido pelo usuário)
+# C e D são equivalentes (finais)
+# E e F são equivalentes (não-finais)
+alfabeto:a,b
+estados:A,B,C,D,E,F
+inicial:A
+finais:C,D
+transicoes
+# Bloco A
+A,B,a
+A,F,b
+# Bloco B
+B,E,a
+B,C,b
+# Bloco C (Final)
+C,E,a
+C,C,b
+# Bloco D (Final - Equivalente a C)
+D,E,a
+D,D,b # Nota: D vai para D em b, C vai para C em b. Isso é chave para C~D.
+# Bloco E (Equivalente a F)
+E,E,a
+E,F,b
+# Bloco F (Não-final / Equivalente a E)
+F,F,a # Nota: E vai para E em a, F vai para F em a. Chave para E~F.
+F,F,b # Nota: E vai para F em b, F vai para F em b. Chave para E~F.
