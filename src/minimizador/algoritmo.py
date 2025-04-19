@@ -72,7 +72,7 @@ def minimizar_afd(afd_original: AFD) -> Generator[Dict[str, Any], None, None]:
         for q in non_finais_alcancaveis:
              if p != q: marked_pairs.add(frozenset({p, q}))
 
-    # Yield initial table state
+    # Yield o estado inicial da tabela 
     yield {"type": "step_table", "pass": 0, "data": _formatar_tabela_marcacao(estados_lista_ordenada, marked_pairs, passo_num=0)}
 
     # 2. Iteração
@@ -101,7 +101,7 @@ def minimizar_afd(afd_original: AFD) -> Generator[Dict[str, Any], None, None]:
         yield {"type": "step_update", "pass": passo, "data": _formatar_novos_marcados(passo, newly_marked)}
 
         marked_pairs.update(newly_marked)
-        # Opcional: Yield o estado completo da tabela novamente
+        # Yield o estado completo da tabela novamente
         yield {"type": "step_table", "pass": passo, "data": _formatar_tabela_marcacao(estados_lista_ordenada, marked_pairs, passo_num=passo)}
         passo += 1
 

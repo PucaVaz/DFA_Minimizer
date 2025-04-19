@@ -1,5 +1,3 @@
-# src/minimizador/validador.py
-
 import collections
 from typing import Tuple, List, Set, Optional
 
@@ -52,8 +50,6 @@ def _verificar_determinismo(afd: AFD, mensagens: List[str]):
             if estado not in afd.transicoes or simbolo not in afd.transicoes.get(estado, {}):
                 mensagens.append(f"ERRO: Transição ausente para o estado '{estado}' com o símbolo '{simbolo}'. AFD não é completo.")
                 determinismo_ok = False
-                # Não precisa continuar checando símbolos para este estado se um já falta
-                # break # Descomente se quiser apenas o primeiro erro por estado
 
     return determinismo_ok
 
@@ -76,7 +72,7 @@ def _verificar_alcancabilidade(afd: AFD, mensagens: List[str]) -> Set[str]:
         # Verifica transições a partir do estado atual
         if estado_atual in afd.transicoes:
             for simbolo in afd.alfabeto:
-                # Usar .get() para segurança caso o determinismo não tenha sido checado antes ou falhado
+                # Ver no nosso hashmap caso o determinismo não tenham sido chegado
                 proximo_estado = afd.transicoes.get(estado_atual, {}).get(simbolo)
 
                 # Se a transição existe e leva a um estado ainda não visitado
