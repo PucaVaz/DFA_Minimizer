@@ -29,7 +29,7 @@ DFA_Minimizer/
 - Python 3.12+
 - Streamlit
 - Graphviz (instalado no sistema)
-- Outras dependências listadas em `requirements.txt` (se existir)
+- Outras dependências listadas em `requirements.txt`
 
 ## Como Executar
 
